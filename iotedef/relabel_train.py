@@ -3,9 +3,6 @@ import os
 os.environ["CUDA_VISIBLE_DEVICES"]="1"
 
 import numpy as np
-from label_packet import generate_label_data, label_packets
-from random_perturb import random_perturb
-from pso import PSO
 from models.lstm import Lstm
 from seq2seq.utils import softmax, print_header, get_events
 from seq2seq.seq2seq_attention import Seq2seqAttention
@@ -140,11 +137,11 @@ for detector in [ps_attack, ps_recon, ps_infec]:
     print("Metrics: \n", metrics_dict_ps)
     metrics_dict[detector.name] = metrics_dict_ps
 
-if args.relabel_rounds==0:
+#if args.relabel_rounds==0:
 
-    metrics_dict_train = 
+    #metrics_dict_train = 
 
-    wandb.log(metrics_dict[ps_infec.name])
+    #wandb.log(metrics_dict[ps_infec.name])
 
 
 metrics_dict_per_round = []
