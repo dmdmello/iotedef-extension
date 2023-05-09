@@ -1,0 +1,89 @@
+2023-05-05 04:29:10.409123: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/opt/oracle/instantclient_19_8:/p/cuda-11.5
+2023-05-05 04:29:10.409165: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-05-05 04:29:13.351631: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2023-05-05 04:29:13.352348: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcuda.so.1
+2023-05-05 04:29:13.808170: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:02:00.0 name: RTX A5000 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 64 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 715.34GiB/s
+2023-05-05 04:29:13.808327: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/opt/oracle/instantclient_19_8:/p/cuda-11.5
+2023-05-05 04:29:13.808683: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'libcublas.so.11'; dlerror: libcublas.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/opt/oracle/instantclient_19_8:/p/cuda-11.5
+2023-05-05 04:29:13.809105: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'libcublasLt.so.11'; dlerror: libcublasLt.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/opt/oracle/instantclient_19_8:/p/cuda-11.5
+2023-05-05 04:29:13.809453: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'libcufft.so.10'; dlerror: libcufft.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/opt/oracle/instantclient_19_8:/p/cuda-11.5
+2023-05-05 04:29:13.809872: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'libcurand.so.10'; dlerror: libcurand.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/opt/oracle/instantclient_19_8:/p/cuda-11.5
+2023-05-05 04:29:13.810224: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'libcusolver.so.10'; dlerror: libcusolver.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/opt/oracle/instantclient_19_8:/p/cuda-11.5
+2023-05-05 04:29:13.810603: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'libcusparse.so.11'; dlerror: libcusparse.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/opt/oracle/instantclient_19_8:/p/cuda-11.5
+2023-05-05 04:29:13.810954: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'libcudnn.so.8'; dlerror: libcudnn.so.8: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/opt/oracle/instantclient_19_8:/p/cuda-11.5
+2023-05-05 04:29:13.811281: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1757] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2023-05-05 04:29:13.812147: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-05-05 04:29:13.814989: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2023-05-05 04:29:13.815069: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2023-05-05 04:29:13.815632: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      
+2023-05-05 04:29:13.969356: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+2023-05-05 04:29:13.970055: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 3700340000 Hz
+the count of label lines 20084
+(20084,)
+features len is  41
+------------------------------------
+Training ps-detector-attack detector
+------------------------------------
+the info of dataset, (19152, 1, 41)
+shuffle is enabled for training
+Early stopping: YES.
+Epoch 1/100
+539/539 - 4s - loss: 0.1306 - accuracy: 0.9568 - auc: 0.9901 - recall: 0.9622 - precision: 0.9522 - val_loss: 0.0745 - val_accuracy: 0.9749 - val_auc: 0.9952 - val_recall: 0.9893 - val_precision: 0.9605
+Epoch 2/100
+539/539 - 1s - loss: 0.0639 - accuracy: 0.9761 - auc: 0.9969 - recall: 0.9866 - precision: 0.9664 - val_loss: 0.0679 - val_accuracy: 0.9791 - val_auc: 0.9967 - val_recall: 0.9786 - val_precision: 0.9786
+Epoch 3/100
+539/539 - 1s - loss: 0.0557 - accuracy: 0.9789 - auc: 0.9975 - recall: 0.9888 - precision: 0.9698 - val_loss: 0.0564 - val_accuracy: 0.9786 - val_auc: 0.9974 - val_recall: 0.9850 - val_precision: 0.9715
+Epoch 4/100
+539/539 - 1s - loss: 0.0510 - accuracy: 0.9810 - auc: 0.9977 - recall: 0.9912 - precision: 0.9715 - val_loss: 0.0619 - val_accuracy: 0.9744 - val_auc: 0.9970 - val_recall: 0.9743 - val_precision: 0.9733
+Epoch 00004: early stopping
+classifier is generated with time step 1
+---------------------------------------------------------------
+Measureing ps-detector-attack detector performance on test data
+---------------------------------------------------------------
+Metrics: 
+ {'auc': 0.9727197198979288, 'accuracy': 0.9773210489014883, 'precision': 0.5685279187817259, 'recall': 0.9105691056910569, 'f1': 0.7000000000000001, 'fp': 85, 'tp': 112, 'fn': 11, 'tn': 4025, 'auprc': 0.9309060858043334, 'precision99': 0.9400000000000001, 'recall99': 0.0}
+features len is  41
+-----------------------------------
+Training ps-detector-recon detector
+-----------------------------------
+the info of dataset, (14410, 1, 41)
+shuffle is enabled for training
+Early stopping: YES.
+Epoch 1/100
+406/406 - 4s - loss: 0.3482 - accuracy: 0.8674 - auc_1: 0.8924 - recall_1: 0.9892 - precision_1: 0.7954 - val_loss: 0.2954 - val_accuracy: 0.8813 - val_auc_1: 0.9030 - val_recall_1: 0.9972 - val_precision_1: 0.8095
+Epoch 2/100
+406/406 - 1s - loss: 0.2988 - accuracy: 0.8786 - auc_1: 0.9020 - recall_1: 0.9958 - precision_1: 0.8066 - val_loss: 0.2999 - val_accuracy: 0.8813 - val_auc_1: 0.9028 - val_recall_1: 0.9972 - val_precision_1: 0.8095
+Epoch 00002: early stopping
+classifier is generated with time step 1
+--------------------------------------------------------------
+Measureing ps-detector-recon detector performance on test data
+--------------------------------------------------------------
+Metrics: 
+ {'auc': 0.9434694063444262, 'accuracy': 0.9681077250177179, 'precision': 0.9617074701820465, 'recall': 0.9957751056223595, 'f1': 0.978444834743733, 'fp': 122, 'tp': 3064, 'fn': 13, 'tn': 1034, 'auprc': 0.9560329547680056, 'precision99': 0.99, 'recall99': 0.02}
+features len is  41
+-----------------------------------
+Training ps-detector-infec detector
+-----------------------------------
+the info of dataset, (19818, 1, 41)
+shuffle is enabled for training
+Early stopping: YES.
+Epoch 1/100
+558/558 - 4s - loss: 0.3846 - accuracy: 0.8547 - auc_2: 0.8945 - recall_2: 0.8108 - precision_2: 0.8892 - val_loss: 0.3145 - val_accuracy: 0.8855 - val_auc_2: 0.9248 - val_recall_2: 0.8159 - val_precision_2: 0.9458
+Epoch 2/100
+558/558 - 1s - loss: 0.3006 - accuracy: 0.8855 - auc_2: 0.9246 - recall_2: 0.8182 - precision_2: 0.9456 - val_loss: 0.2829 - val_accuracy: 0.8951 - val_auc_2: 0.9306 - val_recall_2: 0.8220 - val_precision_2: 0.9608
+Epoch 3/100
+558/558 - 1s - loss: 0.2849 - accuracy: 0.8901 - auc_2: 0.9295 - recall_2: 0.8186 - precision_2: 0.9554 - val_loss: 0.2715 - val_accuracy: 0.8956 - val_auc_2: 0.9362 - val_recall_2: 0.8250 - val_precision_2: 0.9586
+Epoch 4/100
+558/558 - 1s - loss: 0.2805 - accuracy: 0.8924 - auc_2: 0.9317 - recall_2: 0.8204 - precision_2: 0.9585 - val_loss: 0.2725 - val_accuracy: 0.8961 - val_auc_2: 0.9352 - val_recall_2: 0.8281 - val_precision_2: 0.9565
+Epoch 00004: early stopping
+classifier is generated with time step 1
+--------------------------------------------------------------
+Measureing ps-detector-infec detector performance on test data
+--------------------------------------------------------------
+Metrics: 
+ {'auc': 0.7949769873972868, 'accuracy': 0.9352704937396645, 'precision': 0.5718954248366013, 'recall': 0.550314465408805, 
+ 'f1': 0.5608974358974359, 'fp': 131, 'tp': 175, 'fn': 143, 'tn': 3784, 'auprc': 0.5097030292111077, 'precision99': 0.98, 'recall99': 0.0}
