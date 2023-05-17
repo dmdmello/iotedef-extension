@@ -3,7 +3,6 @@ import sys
 import copy
 import logging
 import numpy as np
-from algorithm import Algorithm
 from sklearn.metrics import mean_squared_error
 from sklearn.preprocessing import StandardScaler
 from sklearn.utils import shuffle

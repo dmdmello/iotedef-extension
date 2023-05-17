@@ -3,3 +3,4 @@ iot_intrusion_dataset/
 *npy
 *pyc
 iotedef/experiments/*
+iotedef/wandb/*

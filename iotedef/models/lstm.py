@@ -4,7 +4,8 @@ import sys
 import copy
 import logging
 import numpy as np
-from algorithm import Algorithm
+from models.algorithm import Algorithm
+import tensorflow as tf
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import LSTM
@@ -14,7 +15,6 @@ from sklearn.metrics import mean_squared_error
 from sklearn.preprocessing import StandardScaler
 from sklearn.utils import shuffle
 import sklearn.metrics as metrics 
-import tensorflow as tf
 import sklearn as sk
 from models.utils import recall_at_Xprecision, precision_at_Xrecall, get_fraction_of_array
 from keras.callbacks import EarlyStopping
@@ -137,6 +137,7 @@ class Lstm(Algorithm):
         pred = list(self.classifier[kind].predict(test))
         fpr, tpr, thresholds_roc = metrics.roc_curve(label, np.array(pred).squeeze(), pos_label=1)
         precision, recall, thresholds_pr= metrics.precision_recall_curve(label, np.array(pred).squeeze(), pos_label=1)
+        pr = [precision, recall]
         auc = metrics.auc(fpr, tpr)
         auprc = metrics.auc(recall, precision)
         
@@ -147,21 +148,21 @@ class Lstm(Algorithm):
         p_at_99r = precision_at_Xrecall(np.array(pred).squeeze(), label, 0.99)
         p_at_95r = precision_at_Xrecall(np.array(pred).squeeze(), label, 0.95)
         predicts = []
-
+        
         for p in pred:
             ret = (p[0] > THRESHOLD).astype("int32")
             logging.info("direct calculation number:", p[0],"predict label:", ret)
             predicts.append(ret)
-        pred = np.array(predicts)
-        pred = pred.reshape((pred.shape[0]),)
-
+        predicts = np.array(predicts)
+        predicts = predicts.reshape((predicts.shape[0]),)
+        
         if fallback:
-            logging.debug("lstm> label: {}, pred: {}, ret: {}, time_step: 1".format(label, pred, ret))
+            logging.debug("lstm> label: {}, pred: {}, ret: {}, time_step: 1".format(label, predicts, ret))
         else:
-            logging.debug("lstm> label: {}, pred: {}, ret: {}, time_step: {}".format(label, pred, ret, TIME_STEP))
+            logging.debug("lstm> label: {}, pred: {}, ret: {}, time_step: {}".format(label, predicts, ret, TIME_STEP))
 
         from sklearn.metrics import confusion_matrix
-        tn, fp, fn, tp = confusion_matrix(label, pred).ravel()
+        tn, fp, fn, tp = confusion_matrix(label, predicts).ravel()
 
         acc = (tn+tp)/len(label)
         precision = (tp)/(tp+fp)
@@ -187,5 +188,5 @@ class Lstm(Algorithm):
                         "p_at_99r": p_at_99r,
                         "p_at_95r": p_at_95r
                         }
-        
-        return pred, acc, metrics_dic
+
+        return pred, pr, metrics_dic

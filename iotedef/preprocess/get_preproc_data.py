@@ -4,12 +4,11 @@ os.environ["CUDA_VISIBLE_DEVICES"]="1"
 
 import time
 import numpy as np
-from iotedef.packet_capturer import PacketCapturer
+from packet_capturer import PacketCapturer
 from window_manager import WindowManager
 from feature_extractor import FeatureExtractor
 from numpy_generator import NumpyGenerator
 from label_packet import generate_label_data, label_packets
-from lstm import LSTM
 from random_perturb import random_perturb
 from pso import PSO
 
@@ -106,3 +105,5 @@ for kind in ['attack', 'infection', 'reconnaissance']:
 
     np.save('saved/test_data_{}.npy'.format(kind), test_data)
     np.save('saved/test_label_{}.npy'.format(kind), test_label)
+
+    
